@@ -1,4 +1,5 @@
-﻿using FavoriteFilms.Storage.Models;
+﻿using FavoriteFilims.Storage.Configurations;
+using FavoriteFilms.Storage.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace FavoriteFilms.Storage
@@ -18,5 +19,15 @@ namespace FavoriteFilms.Storage
             Database.EnsureCreated();
         }
 
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.ApplyConfiguration(new UserConfiguration());
+            modelBuilder.ApplyConfiguration(new FilimConfiguration());
+            modelBuilder.ApplyConfiguration(new LikeConfigurtion());
+            modelBuilder.ApplyConfiguration(new StarConfiguration());
+            modelBuilder.ApplyConfiguration(new ReviewConfiguration());
+            modelBuilder.ApplyConfiguration(new CommentConfiguration());
+            base.OnModelCreating(modelBuilder);
+        }
     }
 }
