@@ -1,7 +1,14 @@
+using FavoriteFilms.Storage;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+string connection = builder.Configuration.GetConnectionString("Default");
+
+builder.Services.AddDbContext<FilimDbContext>(options => options.UseSqlServer(connection));
 
 var app = builder.Build();
 
