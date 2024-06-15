@@ -12,10 +12,15 @@ namespace FavoriteFilims.Storage.Configurations
 
             builder
                 .HasOne(f => f.Filim)
-                .WithMany(f => f.Likes);
+                .WithMany(f => f.Likes)
+                .HasForeignKey(f => f.FilimId)
+                .OnDelete(DeleteBehavior.ClientNoAction);
+
             builder
                 .HasOne(f => f.Author)
-                .WithMany(f => f.Likes);
+                .WithMany(f => f.Likes)
+                .HasForeignKey(f=>f.UserId)
+                .OnDelete(DeleteBehavior.ClientNoAction);
         }
     }
 }

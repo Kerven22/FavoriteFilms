@@ -10,7 +10,10 @@
     <Folder Include="Autherization\" />
     <Folder Include="Authentication\" />
     <Folder Include="Exeptions\" />
-    <Folder Include="UseCases\CreateReviewUseCase\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\FavoriteFilms.Storage\FavoriteFilims.Storage.csproj" />
   </ItemGroup>
 
 </Project>

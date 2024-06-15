@@ -19,6 +19,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\FavoriteFilms.Domain\FavoriteFilims.Domain.csproj" />
     <ProjectReference Include="..\FavoriteFilms.Storage\FavoriteFilims.Storage.csproj" />
   </ItemGroup>
 
