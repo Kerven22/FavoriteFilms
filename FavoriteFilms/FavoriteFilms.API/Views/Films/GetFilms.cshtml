@@ -1,0 +1,25 @@
+﻿@model IEnumerable<FavoriteFilims.API.Models.Responsies.FilmResponse>
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Films</title>
+    </head>
+    <body>
+        <div class="text-center p-2">
+            <h2>Favorite Filims</h2>
+            <table class="table table-bordered table-striped table-sm">
+                <thead><tr><th>Id Film</th><th>Title Film</th></tr></thead>
+                <tbody>
+                    @foreach(var i in Model)
+                    {
+                        <tr>
+                            <td>@i.Id</td>
+                            <td>@i.Title</td>
+                        </tr>
+                    }
+                 </tbody>
+            </table>
+        </div>
+    </body>
+</html>
